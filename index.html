@@ -6,7 +6,7 @@
     <title>Prolegion Construction LLC | Drywall, Framing &amp; Ceilings in Northwest Florida</title>
     <meta
       name="description"
-      content="Prolegion Construction LLC is a Freeport, FL drywall contractor serving Northwest Florida, including Destin, Fort Walton Beach, Santa Rosa Beach, 30A, DeFuniak Springs, Navarre, Pensacola and Panama City. Metal framing, drywall hanging and finishing, insulation, painting, demo, fences and acoustical ceilings. Request a free quote."
+      content="Prolegion Construction LLC is a Freeport, FL drywall contractor serving Northwest Florida, including Destin, Fort Walton Beach, Santa Rosa Beach, 30A, DeFuniak Springs, Navarre, Pensacola and Panama City. Metal framing, drywall hanging and finishing, insulation, painting, demo, fences and acoustical ceilings. Request a call today."
     />
     <link rel="icon" type="image/png" href="images/web/logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,7 +23,7 @@
     <div class="topbar">
       <div class="container">
         <span class="hide-sm">Serving Freeport &amp; Northwest Florida</span>
-        <span>Call for a free estimate: <a href="tel:+18507687449">(850) 768-7449</a></span>
+        <span>Call us today: <a href="tel:+18507687449">(850) 768-7449</a></span>
       </div>
     </div>
 
@@ -43,7 +43,7 @@
             <li><a href="gallery.html">Our Work</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
-          <a class="btn btn-primary" href="contact.html">Get a Quote</a>
+          <a class="btn btn-primary" href="contact.html">Request a Call</a>
         </nav>
       </div>
     </header>
@@ -59,7 +59,7 @@
             businesses across Northwest Florida.
           </p>
           <div class="btn-row">
-            <a class="btn btn-primary" href="#quote">Request a Free Quote</a>
+            <a class="btn btn-primary" href="#request-call">Request a Call</a>
             <a class="btn btn-outline" href="tel:+18507687449">Call (850) 768-7449</a>
           </div>
           <ul class="hero-badges">
@@ -174,8 +174,8 @@
           <div class="values">
             <div class="value">
               <div class="num">01</div>
-              <h3>Request a quote</h3>
-              <p>Tell us about your project using the form below or give us a call.</p>
+              <h3>Request a call</h3>
+              <p>Tell us when you are available using the form below, or give us a call.</p>
             </div>
             <div class="value">
               <div class="num">02</div>
@@ -223,15 +223,15 @@
         </div>
       </section>
 
-      <!-- Quote -->
-      <section class="section section-alt" id="quote">
-        <div class="container quote-wrap">
+      <!-- Call request -->
+      <section class="section section-alt" id="request-call">
+        <div class="container call-wrap">
           <div>
-            <span class="eyebrow">Free Estimates</span>
-            <h2>Request a call or quote</h2>
+            <span class="eyebrow">Let's Talk</span>
+            <h2>Request a call</h2>
             <p class="lead">
-              Fill out the form and we'll get back to you, usually within one business day. Prefer to talk now? Give
-              us a call.
+              Let us know when you're available and we'll give you a call to talk through your project. Prefer to
+              talk now? Give us a call.
             </p>
             <ul class="contact-list">
               <li>
@@ -255,25 +255,17 @@
             </ul>
           </div>
 
-          <!-- QUOTE FORM: submissions are emailed via FormSubmit to the address in the action URL -->
-          <form class="quote-form" action="https://formsubmit.co/prolegionconstructionfl@gmail.com" method="POST">
-            <h3>Get your free quote</h3>
+          <!-- CALL REQUEST FORM: submissions are emailed via FormSubmit to the address in the action URL -->
+          <form class="call-form" action="https://formsubmit.co/prolegionconstructionfl@gmail.com" method="POST">
+            <h3>When can we call you?</h3>
             <p class="form-intro">Fields marked <span class="req">*</span> are required.</p>
 
-            <input type="hidden" name="_subject" value="New quote request from prolegion website" />
+            <input type="hidden" name="_subject" value="New call request from prolegion website" />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_captcha" value="false" />
             <input type="text" name="_honey" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
             <div class="form-grid">
-              <fieldset class="field full">
-                <legend>I'd like to <span class="req">*</span></legend>
-                <div class="choice-row">
-                  <label class="choice"><input type="radio" name="Request type" value="Free quote" checked /><span>Get a Quote</span></label>
-                  <label class="choice"><input type="radio" name="Request type" value="Call back" /><span>Request a Call</span></label>
-                </div>
-              </fieldset>
-
               <div class="field">
                 <label for="name-home">Full name <span class="req">*</span></label>
                 <input id="name-home" name="name" type="text" autocomplete="name" required />
@@ -282,9 +274,37 @@
                 <label for="phone-home">Phone <span class="req">*</span></label>
                 <input id="phone-home" name="phone" type="tel" autocomplete="tel" required />
               </div>
+
+              <fieldset class="field full" data-require-one>
+                <legend>Days you're available <span class="req">*</span></legend>
+                <div class="choice-row days">
+                  <label class="choice"><input type="checkbox" name="Days available" value="Monday" /><span>Mon</span></label>
+                  <label class="choice"><input type="checkbox" name="Days available" value="Tuesday" /><span>Tue</span></label>
+                  <label class="choice"><input type="checkbox" name="Days available" value="Wednesday" /><span>Wed</span></label>
+                  <label class="choice"><input type="checkbox" name="Days available" value="Thursday" /><span>Thu</span></label>
+                  <label class="choice"><input type="checkbox" name="Days available" value="Friday" /><span>Fri</span></label>
+                  <label class="choice"><input type="checkbox" name="Days available" value="Saturday" /><span>Sat</span></label>
+                  <label class="choice"><input type="checkbox" name="Days available" value="Sunday" /><span>Sun</span></label>
+                </div>
+              </fieldset>
+
+              <fieldset class="field full" data-require-one>
+                <legend>Best time of day <span class="req">*</span></legend>
+                <div class="choice-row times">
+                  <label class="choice"><input type="checkbox" name="Time of day" value="Morning (8am–12pm)" /><span>Morning<small>8am–12pm</small></span></label>
+                  <label class="choice"><input type="checkbox" name="Time of day" value="Afternoon (12–4pm)" /><span>Afternoon<small>12–4pm</small></span></label>
+                  <label class="choice"><input type="checkbox" name="Time of day" value="Evening (4–7pm)" /><span>Evening<small>4–7pm</small></span></label>
+                </div>
+              </fieldset>
+
+              <div class="field full">
+                <label for="avail-home">Anything else about your availability?</label>
+                <input id="avail-home" name="Availability notes" type="text" placeholder="e.g. after 5pm on weekdays, or a specific date" />
+              </div>
+
               <div class="field">
-                <label for="email-home">Email <span class="req">*</span></label>
-                <input id="email-home" name="email" type="email" autocomplete="email" required />
+                <label for="email-home">Email</label>
+                <input id="email-home" name="email" type="email" autocomplete="email" />
               </div>
               <div class="field">
                 <label for="city-home">Project city / zip</label>
@@ -292,7 +312,7 @@
               </div>
 
               <fieldset class="field full">
-                <legend>Services needed</legend>
+                <legend>What's the call about?</legend>
                 <div class="check-grid">
                   <label><input type="checkbox" name="Services" value="Metal framing" /> Metal framing</label>
                   <label><input type="checkbox" name="Services" value="Drywall hanging" /> Drywall hanging</label>
@@ -306,32 +326,14 @@
                 </div>
               </fieldset>
 
-              <div class="field">
-                <label for="type-home">Property type</label>
-                <select id="type-home" name="Property type">
-                  <option value="">Select one</option>
-                  <option>Residential</option>
-                  <option>Commercial</option>
-                </select>
-              </div>
-              <div class="field">
-                <label for="time-home">Best time to call</label>
-                <select id="time-home" name="Best time to call">
-                  <option value="">Any time</option>
-                  <option>Morning</option>
-                  <option>Afternoon</option>
-                  <option>Evening</option>
-                </select>
-              </div>
-
               <div class="field full">
                 <label for="details-home">Project details</label>
-                <textarea id="details-home" name="Project details" placeholder="Tell us about the job: size, timeline, anything we should know."></textarea>
+                <textarea id="details-home" name="Project details" placeholder="Anything we should know before we call?"></textarea>
               </div>
             </div>
 
             <div class="form-actions">
-              <button class="btn btn-primary" type="submit">Send Request</button>
+              <button class="btn btn-primary" type="submit">Request a Call</button>
               <p class="form-note">We'll never share your information.</p>
             </div>
             <div class="form-status" role="status" aria-live="polite" hidden></div>
@@ -361,7 +363,7 @@
           <ul>
             <li><a href="about.html">About Us</a></li>
             <li><a href="gallery.html">Our Work</a></li>
-            <li><a href="contact.html">Request a Quote</a></li>
+            <li><a href="contact.html">Request a Call</a></li>
           </ul>
         </div>
         <div>
@@ -383,7 +385,7 @@
 
     <div class="mobile-cta">
       <a href="tel:+18507687449">Call Now</a>
-      <a href="contact.html">Free Quote</a>
+      <a href="contact.html">Request a Call</a>
     </div>
 
     <script src="js/script.js"></script>

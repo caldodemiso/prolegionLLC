@@ -22,9 +22,9 @@ document.querySelectorAll("[data-year]").forEach((el) => {
   el.textContent = new Date().getFullYear();
 });
 
-// Quote form: submit via FormSubmit's AJAX endpoint so the visitor stays on the page.
+// Call request form: submit via FormSubmit's AJAX endpoint so the visitor stays on the page.
 // Without JavaScript the form still posts normally to the URL in its action attribute.
-document.querySelectorAll(".quote-form").forEach((form) => {
+document.querySelectorAll(".call-form").forEach((form) => {
   const status = form.querySelector(".form-status");
   const button = form.querySelector('button[type="submit"]');
   const buttonText = button.textContent;
@@ -35,8 +35,23 @@ document.querySelectorAll(".quote-form").forEach((form) => {
     status.hidden = false;
   };
 
+  // Checkbox groups marked data-require-one need at least one box checked
+  const requiredGroups = [...form.querySelectorAll("[data-require-one]")];
+
+  const checkGroups = () =>
+    requiredGroups.forEach((group) => {
+      const boxes = [...group.querySelectorAll('input[type="checkbox"]')];
+      const legend = group.querySelector("legend").firstChild.textContent.trim();
+      boxes[0].setCustomValidity(
+        boxes.some((box) => box.checked) ? "" : `Please choose at least one option for "${legend}".`
+      );
+    });
+
+  form.addEventListener("change", checkGroups);
+
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
+    checkGroups();
     if (!form.reportValidity()) return;
 
     button.disabled = true;
@@ -46,10 +61,12 @@ document.querySelectorAll(".quote-form").forEach((form) => {
     const endpoint = form.action.replace("formsubmit.co/", "formsubmit.co/ajax/");
     const data = new FormData(form);
 
-    // Combine checked services into one readable line for the email
-    const services = data.getAll("Services");
-    data.delete("Services");
-    data.set("Services", services.length ? services.join(", ") : "Not specified");
+    // Combine each group of checked boxes into one readable line for the email
+    ["Days available", "Time of day", "Services"].forEach((name) => {
+      const values = data.getAll(name);
+      data.delete(name);
+      data.set(name, values.length ? values.join(", ") : "Not specified");
+    });
 
     try {
       const response = await fetch(endpoint, {
@@ -61,7 +78,7 @@ document.querySelectorAll(".quote-form").forEach((form) => {
 
       if (response.ok && String(result.success) === "true") {
         form.reset();
-        showStatus("success", "Thanks! Your request was sent. We'll be in touch soon.");
+        showStatus("success", "Thanks! Your request was sent. We'll give you a call during the times you picked.");
       } else {
         throw new Error(result.message || "Request failed");
       }
