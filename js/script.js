@@ -85,7 +85,7 @@ document.querySelectorAll(".call-form").forEach((form) => {
     } catch (error) {
       showStatus(
         "error",
-        "Sorry, something went wrong sending your request. Please try again or give us a call."
+        "Sorry, something went wrong sending your request. Please try again, or call or text us at (850) 768-7449."
       );
       console.error(error);
     } finally {

@@ -30,6 +30,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Keep in-page link targets clear of the sticky header */
+[id] {
+  scroll-margin-top: 90px;
+}
+
 body {
   margin: 0;
   font-family: var(--font-body);
@@ -1192,7 +1197,7 @@ fieldset.field {
 
   .mobile-cta {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1.6fr;
     position: fixed;
     left: 0;
     right: 0;
@@ -1220,7 +1225,12 @@ fieldset.field {
   }
 
   .mobile-cta a + a {
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .mobile-cta a:last-child {
     background: var(--blue);
+    border-left: 0;
   }
 }
 
