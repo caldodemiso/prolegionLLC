@@ -35,23 +35,8 @@ document.querySelectorAll(".call-form").forEach((form) => {
     status.hidden = false;
   };
 
-  // Checkbox groups marked data-require-one need at least one box checked
-  const requiredGroups = [...form.querySelectorAll("[data-require-one]")];
-
-  const checkGroups = () =>
-    requiredGroups.forEach((group) => {
-      const boxes = [...group.querySelectorAll('input[type="checkbox"]')];
-      const legend = group.querySelector("legend").firstChild.textContent.trim();
-      boxes[0].setCustomValidity(
-        boxes.some((box) => box.checked) ? "" : `Please choose at least one option for "${legend}".`
-      );
-    });
-
-  form.addEventListener("change", checkGroups);
-
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
-    checkGroups();
     if (!form.reportValidity()) return;
 
     button.disabled = true;
@@ -78,7 +63,7 @@ document.querySelectorAll(".call-form").forEach((form) => {
 
       if (response.ok && String(result.success) === "true") {
         form.reset();
-        showStatus("success", "Thanks! Your request was sent. We'll give you a call during the times you picked.");
+        showStatus("success", "Thanks! Your request was sent. We'll give you a call soon.");
       } else {
         throw new Error(result.message || "Request failed");
       }
