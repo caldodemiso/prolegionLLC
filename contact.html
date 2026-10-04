@@ -89,15 +89,15 @@
             </ul>
           </div>
 
-          <!-- CALL REQUEST FORM: submissions are emailed via FormSubmit to the address in the action URL -->
-          <form class="call-form" action="https://formsubmit.co/prolegionconstructionfl@gmail.com" method="POST">
+          <!-- CALL REQUEST FORM: submissions are emailed by Web3Forms to the address tied to the access key -->
+          <form class="call-form" action="https://api.web3forms.com/submit" method="POST">
             <h3>When can we call you?</h3>
             <p class="form-intro">Fields marked <span class="req">*</span> are required.</p>
 
-            <input type="hidden" name="_subject" value="New call request from prolegion website" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="text" name="_honey" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <input type="hidden" name="access_key" value="WEB3FORMS_ACCESS_KEY" />
+            <input type="hidden" name="subject" value="New call request from prolegion website" />
+            <input type="hidden" name="from_name" value="Prolegion Construction Website" />
+            <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
             <div class="form-grid">
               <div class="field">
