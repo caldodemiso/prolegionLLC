@@ -39,6 +39,15 @@ document.querySelectorAll(".call-form").forEach((form) => {
     event.preventDefault();
     if (!form.reportValidity()) return;
 
+    // FormSubmit rejects pages opened straight from disk (file://), so say so instead of failing quietly
+    if (location.protocol === "file:") {
+      showStatus(
+        "error",
+        "This form only works when the site is opened through a web server (e.g. python3 -m http.server), not as a file."
+      );
+      return;
+    }
+
     button.disabled = true;
     button.textContent = "Sending...";
     status.hidden = true;
@@ -56,14 +65,20 @@ document.querySelectorAll(".call-form").forEach((form) => {
     try {
       const response = await fetch(endpoint, {
         method: "POST",
-        headers: { Accept: "application/json" },
-        body: data,
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(Object.fromEntries(data)),
       });
       const result = await response.json().catch(() => ({}));
 
       if (response.ok && String(result.success) === "true") {
         form.reset();
         showStatus("success", "Thanks! Your request was sent. We'll give you a call soon.");
+      } else if (/activat/i.test(result.message || "")) {
+        // Only happens before the business email has clicked FormSubmit's one-time "Activate Form" link
+        showStatus(
+          "error",
+          "This form isn't activated yet. Check the business inbox (and spam) for FormSubmit's \"Activate Form\" email, click it, then submit again."
+        );
       } else {
         throw new Error(result.message || "Request failed");
       }
