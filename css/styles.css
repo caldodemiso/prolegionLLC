@@ -1064,6 +1064,11 @@ fieldset.field {
   transition: opacity 0.2s, transform 0.2s;
 }
 
+/* Logos that are already a circle (Facebook) show without the disc */
+.social-links a.social-plain {
+  background: none;
+}
+
 .social-links a:hover,
 .social-links a:focus-visible {
   opacity: 0.85;
