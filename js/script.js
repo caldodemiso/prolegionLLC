@@ -1,3 +1,9 @@
+// Show clean addresses in the address bar: /index.html -> /, /about.html -> /about
+if (location.protocol !== "file:" && location.pathname.endsWith(".html")) {
+  const cleanPath = location.pathname.replace(/(^|\/)index\.html$/, "$1").replace(/\.html$/, "");
+  history.replaceState(null, "", cleanPath + location.search + location.hash);
+}
+
 // Mobile menu toggle
 const navToggle = document.querySelector(".nav-toggle");
 const nav = document.getElementById("site-nav");
