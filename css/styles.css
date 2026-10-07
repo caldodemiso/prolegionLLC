@@ -1052,21 +1052,12 @@ fieldset.field {
   margin-top: 18px;
 }
 
-/* White circles with the mark cut out in the footer color, matching Facebook's official secondary logo */
+/* White platform logos from images/socials/ */
 .social-links a {
-  display: grid;
-  place-items: center;
+  display: block;
   width: 42px;
   height: 42px;
-  border-radius: 50%;
-  background: #fff;
-  color: #0b0d10;
   transition: opacity 0.2s, transform 0.2s;
-}
-
-/* Logo images bring their own circle */
-.social-links a.social-logo {
-  background: none;
 }
 
 .social-links a:hover,
@@ -1078,11 +1069,7 @@ fieldset.field {
 .social-links img {
   width: 100%;
   height: 100%;
-}
-
-.social-links svg {
-  width: 22px;
-  height: 22px;
+  object-fit: contain;
 }
 
 .footer-bottom {
