@@ -1125,6 +1125,10 @@ fieldset.field {
   overflow-wrap: anywhere;
 }
 
+.qr-card .btn {
+  border-radius: 10px;
+}
+
 .qr-card .btn svg,
 .qr-card .btn img {
   width: 20px;
