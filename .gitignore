@@ -3,3 +3,4 @@
 # Original full-size photos/videos stay local; the site uses the optimized copies in images/web/
 images/*
 !images/web/
+!images/socials/
