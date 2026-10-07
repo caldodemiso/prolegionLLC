@@ -1052,11 +1052,15 @@ fieldset.field {
   margin-top: 20px;
 }
 
-/* Colored platform logos from images/socials/ */
+/* Colored platform logos from images/socials/, each centered on a matching white disc.
+   Logo size comes from each img's width/height (tuned so the marks look the same size). */
 .social-links a {
-  display: block;
+  display: grid;
+  place-items: center;
   width: 32px;
   height: 32px;
+  border-radius: 50%;
+  background: #fff;
   transition: opacity 0.2s, transform 0.2s;
 }
 
@@ -1064,25 +1068,6 @@ fieldset.field {
 .social-links a:focus-visible {
   opacity: 0.85;
   transform: translateY(-2px);
-}
-
-.social-links img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-/* Marks without their own circle (e.g. Google's G) sit on a white disc to match */
-.social-links a.social-badge {
-  display: grid;
-  place-items: center;
-  background: #fff;
-  border-radius: 50%;
-}
-
-.social-links a.social-badge img {
-  width: 20px;
-  height: 20px;
 }
 
 .footer-bottom {
