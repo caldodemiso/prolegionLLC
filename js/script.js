@@ -28,7 +28,7 @@ document.querySelectorAll("[data-year]").forEach((el) => {
   el.textContent = new Date().getFullYear();
 });
 
-// Call request form: submit to Web3Forms in the background so the visitor stays on the page.
+// Quote request form: submit to Web3Forms in the background so the visitor stays on the page.
 // Without JavaScript the form still posts normally to the URL in its action attribute.
 document.querySelectorAll(".call-form").forEach((form) => {
   const status = form.querySelector(".form-status");
@@ -51,8 +51,8 @@ document.querySelectorAll(".call-form").forEach((form) => {
 
     const data = new FormData(form);
 
-    // Combine each group of checked boxes into one readable line for the email
-    ["Days available", "Time of day", "Services"].forEach((name) => {
+    // Combine each group of choices into one readable line for the email
+    ["Project type", "Services", "Timeline"].forEach((name) => {
       const values = data.getAll(name);
       data.delete(name);
       data.set(name, values.length ? values.join(", ") : "Not specified");
@@ -68,7 +68,7 @@ document.querySelectorAll(".call-form").forEach((form) => {
 
       if (response.ok && result.success) {
         form.reset();
-        showStatus("success", "Thanks! Your request was sent. We'll give you a call soon.");
+        showStatus("success", "Thanks! Your quote request was sent. We'll be in touch soon.");
       } else {
         throw new Error(result.message || "Request failed");
       }
